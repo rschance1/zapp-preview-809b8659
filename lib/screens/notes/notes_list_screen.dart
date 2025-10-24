@@ -185,20 +185,20 @@ class _NotesListScreenState extends State<NotesListScreen> {
                   ),
                   trailing: PopupMenuButton(
                     itemBuilder: (context) => [
-                      const PopupMenuItem(
+                      PopupMenuItem(
                         value: 'edit',
-                        child: const Row(
-                          children: [
+                        child: Row(
+                          children: const [
                             Icon(Icons.edit_outlined),
                             SizedBox(width: 8),
                             Text('Edit'),
                           ],
                         ),
                       ),
-                      const PopupMenuItem(
+                      PopupMenuItem(
                         value: 'delete',
-                        child: const Row(
-                          children: [
+                        child: Row(
+                          children: const [
                             Icon(Icons.delete_outlined, color: Colors.red),
                             SizedBox(width: 8),
                             Text('Delete', style: TextStyle(color: Colors.red)),
