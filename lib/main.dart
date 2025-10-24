@@ -82,8 +82,8 @@ class _AuthWrapperState extends State<AuthWrapper> {
   }
 
   Future<void> _initializeAuth() async {
-    // Get initial session
-    _session = authService.currentUser?.session;
+    // Get initial session from Supabase client
+    _session = Supabase.instance.client.auth.currentSession;
     
     // Listen to auth changes
     authService.authStateChanges.listen((AuthState data) {
