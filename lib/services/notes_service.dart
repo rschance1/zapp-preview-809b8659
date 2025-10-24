@@ -58,9 +58,15 @@ class NotesService {
   }
 
   Stream<List<Note>> watchNotes() {
+    final userId = _supabase.auth.currentUser?.id;
+    if (userId == null) {
+      return Stream.value([]);
+    }
+
     return _supabase
         .from('notes')
         .stream(primaryKey: ['id'])
+        .eq('user_id', userId)
         .order('created_at', ascending: false)
         .map((data) => data.map((json) => Note.fromJson(json)).toList());
   }
