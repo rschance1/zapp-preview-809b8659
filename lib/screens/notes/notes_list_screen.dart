@@ -61,8 +61,8 @@ class _NotesListScreenState extends State<NotesListScreen> with SingleTickerProv
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Row(
-              children: [
+            content: Row(
+              children: const [
                 Icon(Icons.check_circle, color: Colors.white),
                 SizedBox(width: 12),
                 Text('Note deleted successfully'),
@@ -93,8 +93,8 @@ class _NotesListScreenState extends State<NotesListScreen> with SingleTickerProv
       context: context,
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Row(
-          children: [
+        title: Row(
+          children: const [
             Icon(Icons.warning_amber_rounded, color: Color(0xFFF59E0B), size: 28),
             SizedBox(width: 12),
             Text('Delete Note'),
