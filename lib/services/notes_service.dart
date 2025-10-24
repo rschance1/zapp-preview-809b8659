@@ -63,11 +63,15 @@ class NotesService {
       return Stream.value([]);
     }
 
+    // Use stream with explicit event listening for better realtime updates
     return _supabase
         .from('notes')
         .stream(primaryKey: ['id'])
         .eq('user_id', userId)
         .order('created_at', ascending: false)
-        .map((data) => data.map((json) => Note.fromJson(json)).toList());
+        .map((data) {
+          print('Stream update received: ${data.length} notes'); // Debug log
+          return data.map((json) => Note.fromJson(json)).toList();
+        });
   }
 }
