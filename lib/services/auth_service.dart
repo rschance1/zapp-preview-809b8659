@@ -11,20 +11,53 @@ class AuthService {
     required String email,
     required String password,
   }) async {
-    return await _supabase.auth.signUp(
-      email: email,
-      password: password,
-    );
+    try {
+      final response = await _supabase.auth.signUp(
+        email: email,
+        password: password,
+        emailRedirectTo: null,
+        data: {'email_confirm': false},
+      );
+      
+      // Log detailed information for debugging
+      print('Signup response: ${response.user?.id}');
+      print('Signup session: ${response.session?.accessToken != null}');
+      
+      return response;
+    } catch (e) {
+      print('Signup error details: $e');
+      print('Error type: ${e.runtimeType}');
+      if (e is AuthException) {
+        print('Auth error message: ${e.message}');
+        print('Auth error status code: ${e.statusCode}');
+      }
+      rethrow;
+    }
   }
 
   Future<AuthResponse> signIn({
     required String email,
     required String password,
   }) async {
-    return await _supabase.auth.signInWithPassword(
-      email: email,
-      password: password,
-    );
+    try {
+      final response = await _supabase.auth.signInWithPassword(
+        email: email,
+        password: password,
+      );
+      
+      print('Signin response: ${response.user?.id}');
+      print('Signin session: ${response.session?.accessToken != null}');
+      
+      return response;
+    } catch (e) {
+      print('Signin error details: $e');
+      print('Error type: ${e.runtimeType}');
+      if (e is AuthException) {
+        print('Auth error message: ${e.message}');
+        print('Auth error status code: ${e.statusCode}');
+      }
+      rethrow;
+    }
   }
 
   Future<void> signOut() async {
