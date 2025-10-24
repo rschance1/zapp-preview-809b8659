@@ -53,8 +53,8 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Row(
-              children: [
+            content: Row(
+              children: const [
                 Icon(Icons.check_circle_rounded, color: Colors.white),
                 SizedBox(width: 12),
                 Expanded(child: Text('Account created successfully! Please sign in.')),
