@@ -39,9 +39,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF6366F1), // Indigo
-          primary: const Color(0xFF6366F1),
-          secondary: const Color(0xFFEC4899), // Pink
+          seedColor: const Color(0xFFEC4899), // Pink
+          primary: const Color(0xFFEC4899), // Pink
+          secondary: const Color(0xFFF472B6), // Light Pink
           tertiary: const Color(0xFF8B5CF6), // Purple
           surface: Colors.white,
           background: const Color(0xFFF8FAFC),
@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             elevation: 0,
-            backgroundColor: const Color(0xFF6366F1),
+            backgroundColor: const Color(0xFFEC4899), // Pink
             foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
             shape: RoundedRectangleBorder(
@@ -93,7 +93,7 @@ class MyApp extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: Color(0xFF6366F1), width: 2),
+            borderSide: const BorderSide(color: Color(0xFFEC4899), width: 2), // Pink
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
@@ -102,7 +102,7 @@ class MyApp extends StatelessWidget {
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         ),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: Color(0xFF6366F1),
+          backgroundColor: Color(0xFFEC4899), // Pink
           foregroundColor: Colors.white,
           elevation: 4,
           shape: RoundedRectangleBorder(
