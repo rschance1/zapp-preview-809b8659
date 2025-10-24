@@ -42,6 +42,21 @@
 <body>
   <script>
     window.addEventListener('load', function(ev) {
+      // Wait for flutter.js to load
+      if (typeof _flutter === 'undefined') {
+        // Fallback: wait for flutter.js to be available
+        const checkFlutter = setInterval(function() {
+          if (typeof _flutter !== 'undefined') {
+            clearInterval(checkFlutter);
+            initializeFlutter();
+          }
+        }, 50);
+      } else {
+        initializeFlutter();
+      }
+    });
+
+    function initializeFlutter() {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
@@ -53,7 +68,7 @@
           });
         }
       });
-    });
+    }
   </script>
 </body>
 </html>
