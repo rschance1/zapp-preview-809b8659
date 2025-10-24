@@ -187,7 +187,7 @@ class _NotesListScreenState extends State<NotesListScreen> {
                     itemBuilder: (context) => [
                       const PopupMenuItem(
                         value: 'edit',
-                        child: Row(
+                        child: const Row(
                           children: [
                             Icon(Icons.edit_outlined),
                             SizedBox(width: 8),
@@ -197,7 +197,7 @@ class _NotesListScreenState extends State<NotesListScreen> {
                       ),
                       const PopupMenuItem(
                         value: 'delete',
-                        child: Row(
+                        child: const Row(
                           children: [
                             Icon(Icons.delete_outlined, color: Colors.red),
                             SizedBox(width: 8),
