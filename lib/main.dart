@@ -63,32 +63,60 @@ class NotesApp extends StatelessWidget {
   }
 }
 
-class AuthWrapper extends StatelessWidget {
+class AuthWrapper extends StatefulWidget {
   const AuthWrapper({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final authService = AuthService();
+  State<AuthWrapper> createState() => _AuthWrapperState();
+}
+
+class _AuthWrapperState extends State<AuthWrapper> {
+  final authService = AuthService();
+  bool _isLoading = true;
+  Session? _session;
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeAuth();
+  }
+
+  Future<void> _initializeAuth() async {
+    // Get initial session
+    _session = authService.currentUser?.session;
     
-    return StreamBuilder<AuthState>(
-      stream: authService.authStateChanges,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(),
-            ),
-          );
-        }
+    // Listen to auth changes
+    authService.authStateChanges.listen((AuthState data) {
+      if (mounted) {
+        setState(() {
+          _session = data.session;
+          _isLoading = false;
+        });
+      }
+    });
 
-        final session = snapshot.hasData ? snapshot.data!.session : null;
+    // Stop loading after initial check
+    if (mounted) {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
 
-        if (session != null) {
-          return const NotesListScreen();
-        } else {
-          return const LoginScreen();
-        }
-      },
-    );
+  @override
+  Widget build(BuildContext context) {
+    if (_isLoading) {
+      return const Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
+
+    if (_session != null) {
+      return const NotesListScreen();
+    } else {
+      return const LoginScreen();
+    }
   }
 }
