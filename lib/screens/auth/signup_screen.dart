@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../services/auth_service.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -46,12 +47,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
         );
         Navigator.of(context).pop();
       }
+    } on AuthException catch (e) {
+      if (mounted) {
+        String errorMessage = 'Sign up failed: ${e.message}';
+        
+        // Provide more specific error messages
+        if (e.statusCode == '401') {
+          errorMessage = 'Authentication error: Invalid API credentials. Please check your Supabase configuration.';
+        } else if (e.statusCode == '400') {
+          errorMessage = 'Invalid request: ${e.message}';
+        } else if (e.message.contains('already registered')) {
+          errorMessage = 'This email is already registered. Please sign in instead.';
+        }
+        
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(errorMessage),
+            backgroundColor: Colors.red,
+            duration: const Duration(seconds: 5),
+          ),
+        );
+      }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Sign up failed: ${e.toString()}'),
             backgroundColor: Colors.red,
+            duration: const Duration(seconds: 5),
           ),
         );
       }
