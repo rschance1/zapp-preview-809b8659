@@ -86,8 +86,8 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              const Color(0xFF6366F1).withOpacity(0.1),
               const Color(0xFFEC4899).withOpacity(0.1),
+              const Color(0xFF8B5CF6).withOpacity(0.1),
             ],
           ),
         ),
@@ -116,14 +116,14 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
                               colors: [
-                                Color(0xFF6366F1),
+                                Color(0xFFEC4899),
                                 Color(0xFF8B5CF6),
                               ],
                             ),
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: const Color(0xFF6366F1).withOpacity(0.3),
+                                color: const Color(0xFFEC4899).withOpacity(0.3),
                                 blurRadius: 30,
                                 offset: const Offset(0, 10),
                               ),
@@ -177,12 +177,12 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                                 margin: const EdgeInsets.all(12),
                                 padding: const EdgeInsets.all(8),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF6366F1).withOpacity(0.1),
+                                  color: const Color(0xFFEC4899).withOpacity(0.1),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: const Icon(
                                   Icons.email_outlined,
-                                  color: Color(0xFF6366F1),
+                                  color: Color(0xFFEC4899),
                                   size: 20,
                                 ),
                               ),
@@ -227,12 +227,12 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                                 margin: const EdgeInsets.all(12),
                                 padding: const EdgeInsets.all(8),
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFFEC4899).withOpacity(0.1),
+                                  color: const Color(0xFF8B5CF6).withOpacity(0.1),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: const Icon(
                                   Icons.lock_outlined,
-                                  color: Color(0xFFEC4899),
+                                  color: Color(0xFF8B5CF6),
                                   size: 20,
                                 ),
                               ),
@@ -271,14 +271,14 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
                               colors: [
-                                Color(0xFF6366F1),
+                                Color(0xFFEC4899),
                                 Color(0xFF8B5CF6),
                               ],
                             ),
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: [
                               BoxShadow(
-                                color: const Color(0xFF6366F1).withOpacity(0.4),
+                                color: const Color(0xFFEC4899).withOpacity(0.4),
                                 blurRadius: 20,
                                 offset: const Offset(0, 8),
                               ),
@@ -336,7 +336,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF6366F1),
+                                  color: Color(0xFFEC4899),
                                 ),
                               ),
                             ),
