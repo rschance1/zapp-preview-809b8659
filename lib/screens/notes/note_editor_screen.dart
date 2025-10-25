@@ -120,7 +120,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> with SingleTickerPr
           child: IconButton(
             icon: const Icon(Icons.arrow_back_rounded),
             onPressed: () => Navigator.of(context).pop(),
-            color: const Color(0xFF6366F1),
+            color: const Color(0xFFEC4899),
           ),
         ),
         title: Text(widget.note == null ? 'New Note' : 'Edit Note'),
@@ -142,14 +142,14 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> with SingleTickerPr
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   colors: [
-                    Color(0xFF6366F1),
+                    Color(0xFFEC4899),
                     Color(0xFF8B5CF6),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF6366F1).withOpacity(0.3),
+                    color: const Color(0xFFEC4899).withOpacity(0.3),
                     blurRadius: 10,
                     offset: const Offset(0, 4),
                   ),
@@ -170,8 +170,8 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> with SingleTickerPr
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              const Color(0xFF6366F1).withOpacity(0.05),
               const Color(0xFFEC4899).withOpacity(0.05),
+              const Color(0xFF8B5CF6).withOpacity(0.05),
             ],
           ),
         ),
@@ -196,7 +196,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> with SingleTickerPr
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF6366F1).withOpacity(0.1),
+                          color: const Color(0xFFEC4899).withOpacity(0.1),
                           blurRadius: 20,
                           offset: const Offset(0, 4),
                         ),
@@ -222,7 +222,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> with SingleTickerPr
                           decoration: BoxDecoration(
                             gradient: const LinearGradient(
                               colors: [
-                                Color(0xFF6366F1),
+                                Color(0xFFEC4899),
                                 Color(0xFF8B5CF6),
                               ],
                             ),
@@ -259,7 +259,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> with SingleTickerPr
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFFEC4899).withOpacity(0.1),
+                          color: const Color(0xFF8B5CF6).withOpacity(0.1),
                           blurRadius: 20,
                           offset: const Offset(0, 4),
                         ),
