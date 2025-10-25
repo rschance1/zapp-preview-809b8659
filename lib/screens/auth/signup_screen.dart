@@ -118,8 +118,8 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              const Color(0xFF6366F1).withOpacity(0.1),
               const Color(0xFFEC4899).withOpacity(0.1),
+              const Color(0xFF8B5CF6).withOpacity(0.1),
             ],
           ),
         ),
@@ -145,7 +145,7 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
                       child: IconButton(
                         icon: const Icon(Icons.arrow_back_rounded),
                         onPressed: () => Navigator.of(context).pop(),
-                        color: const Color(0xFF6366F1),
+                        color: const Color(0xFFEC4899),
                       ),
                     ),
                   ],
@@ -237,12 +237,12 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
                                       margin: const EdgeInsets.all(12),
                                       padding: const EdgeInsets.all(8),
                                       decoration: BoxDecoration(
-                                        color: const Color(0xFF6366F1).withOpacity(0.1),
+                                        color: const Color(0xFFEC4899).withOpacity(0.1),
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: const Icon(
                                         Icons.email_outlined,
-                                        color: Color(0xFF6366F1),
+                                        color: Color(0xFFEC4899),
                                         size: 20,
                                       ),
                                     ),
@@ -287,12 +287,12 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
                                       margin: const EdgeInsets.all(12),
                                       padding: const EdgeInsets.all(8),
                                       decoration: BoxDecoration(
-                                        color: const Color(0xFFEC4899).withOpacity(0.1),
+                                        color: const Color(0xFF8B5CF6).withOpacity(0.1),
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: const Icon(
                                         Icons.lock_outlined,
-                                        color: Color(0xFFEC4899),
+                                        color: Color(0xFF8B5CF6),
                                         size: 20,
                                       ),
                                     ),
@@ -348,12 +348,12 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
                                       margin: const EdgeInsets.all(12),
                                       padding: const EdgeInsets.all(8),
                                       decoration: BoxDecoration(
-                                        color: const Color(0xFF8B5CF6).withOpacity(0.1),
+                                        color: const Color(0xFFC026D3).withOpacity(0.1),
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: const Icon(
                                         Icons.lock_outlined,
-                                        color: Color(0xFF8B5CF6),
+                                        color: Color(0xFFC026D3),
                                         size: 20,
                                       ),
                                     ),
@@ -454,7 +454,7 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
                                       style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold,
-                                        color: Color(0xFF6366F1),
+                                        color: Color(0xFFEC4899),
                                       ),
                                     ),
                                   ),
