@@ -123,12 +123,12 @@ class _NotesListScreenState extends State<NotesListScreen> with SingleTickerProv
 
   Color _getNoteColor(int index) {
     final colors = [
-      const Color(0xFF6366F1), // Indigo
       const Color(0xFFEC4899), // Pink
+      const Color(0xFFF472B6), // Light Pink
       const Color(0xFF8B5CF6), // Purple
-      const Color(0xFF06B6D4), // Cyan
-      const Color(0xFF10B981), // Emerald
-      const Color(0xFFF59E0B), // Amber
+      const Color(0xFFDB2777), // Deep Pink
+      const Color(0xFFC026D3), // Fuchsia
+      const Color(0xFFE879F9), // Light Fuchsia
     ];
     return colors[index % colors.length];
   }
@@ -157,7 +157,7 @@ class _NotesListScreenState extends State<NotesListScreen> with SingleTickerProv
               icon: const Icon(Icons.logout_rounded),
               onPressed: _signOut,
               tooltip: 'Sign Out',
-              color: const Color(0xFF6366F1),
+              color: const Color(0xFFEC4899),
             ),
           ),
         ],
@@ -168,8 +168,8 @@ class _NotesListScreenState extends State<NotesListScreen> with SingleTickerProv
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              const Color(0xFF6366F1).withOpacity(0.05),
               const Color(0xFFEC4899).withOpacity(0.05),
+              const Color(0xFF8B5CF6).withOpacity(0.05),
             ],
           ),
         ),
@@ -229,8 +229,8 @@ class _NotesListScreenState extends State<NotesListScreen> with SingleTickerProv
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            const Color(0xFF6366F1).withOpacity(0.1),
                             const Color(0xFFEC4899).withOpacity(0.1),
+                            const Color(0xFF8B5CF6).withOpacity(0.1),
                           ],
                         ),
                         shape: BoxShape.circle,
@@ -238,7 +238,7 @@ class _NotesListScreenState extends State<NotesListScreen> with SingleTickerProv
                       child: const Icon(
                         Icons.note_add_outlined,
                         size: 80,
-                        color: Color(0xFF6366F1),
+                        color: Color(0xFFEC4899),
                       ),
                     ),
                     const SizedBox(height: 32),
@@ -450,13 +450,13 @@ class _NotesListScreenState extends State<NotesListScreen> with SingleTickerProv
             borderRadius: BorderRadius.circular(16),
             gradient: const LinearGradient(
               colors: [
-                Color(0xFF6366F1),
+                Color(0xFFEC4899),
                 Color(0xFF8B5CF6),
               ],
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF6366F1).withOpacity(0.4),
+                color: const Color(0xFFEC4899).withOpacity(0.4),
                 blurRadius: 20,
                 offset: const Offset(0, 8),
               ),
